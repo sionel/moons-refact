@@ -21,6 +21,7 @@
   height: 600px;
   margin: auto;
   margin-top: 70px;
+  border-radius: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
