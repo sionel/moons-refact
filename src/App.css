@@ -3,6 +3,30 @@
   
 }
 
+.checkBtn{
+  border: none;
+  background-color: white;
+  color : green;
+  
+}
+.grow{
+  flex-grow: 3;
+  text-align: left;
+}
+.delBtn{
+  border: none;
+  background-color: #eee;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: red;
+  border-radius: 50%;
+
+}
+
+.bottom{
+  position: bottom;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -52,4 +76,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.delBtn:hover{
+  background-color: black;
 }
