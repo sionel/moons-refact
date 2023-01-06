@@ -5,14 +5,14 @@ function AddBtn(props){
 
   return (
     <div>
-      <input
+      <input className='addInput'
         placeholder="할일 입력"
         onChange={(e) => {
           props.setAddlist(e.target.value);
         }}
       ></input>
 
-      <button
+      <button className='add'
         onClick={() => {
           let items = localStorage.getItem("todolist");
           items = JSON.parse(items);

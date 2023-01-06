@@ -29,6 +29,15 @@ function App() {
           <Today></Today>
 
           <hr></hr>
+          {/** 배열 state만들고 state값은 0, 해당 투두리스트에 체크버튼 클릭하면 해당 인덱스의 배열state를 1로 한번더 누르면 다시 0으로
+           * 투두리스트 추가하는 버튼누르면 배열state에 하나더 추가하기위해 0을 하나더 배열에 넣은 다음다시 저장해줘야함
+           * className담을 state하나 만들고 useEffect써서 해당 state값이 1이면 className담을 state에 css에 미리 만들어둔 해당 스타일명을 넣어줌
+           * className담을 state가 두개필요할듯? - 하나는 버튼 하나는 텍스트 글자 옅게하고 가운데 줄긋기위한
+           * 
+           */}
+          <div>
+            <AddBtn addlist={addlist} setAddlist={setAddlist} setData={setData}></AddBtn>
+          </div>
           
           <div>
             {{data} == null ? null :
@@ -39,12 +48,7 @@ function App() {
               )
             })}
           </div>
-
-          <hr></hr>
           
-          <div className='bottom'>
-            <AddBtn addlist={addlist} setAddlist={setAddlist} setData={setData}></AddBtn>
-          </div>
         </div>
       </div>
     </div>
@@ -54,10 +58,11 @@ function App() {
 //{props.toggle == true ? props.setComplete(props.complete++) : props.setTotal(props.total++);}
 //투두리스트 완료버튼누르면 toggle값을 토글시키고 그값이 트루면 complete++ 한번더 눌러서 false가 되면 total값을 ++
 
+//체크버튼 클릭하면 해당리스트 텍스트에 줄이 그어지고 (transform사용)체크버튼의 배경색이 고정 ,한번더 누르면 그어진 줄이 지워지고 버튼 배경색 사라짐
 
 function List(props){
   return(
-    <div style={{display : 'flex'}}>
+    <div className='listDisplay' style={{display : 'flex'}}>
       <button className='checkBtn' onClick={()=>{
         props.setToggle(!props.toggle);
       }}>✔️</button>

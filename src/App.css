@@ -3,10 +3,35 @@
   
 }
 
+div{
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+}
+html{
+	line-height: 1.15;
+}
+.addInput{
+  height: 23px;
+  margin: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.add{
+  border: 2px solid black;
+  padding: 5px 10px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+.listDisplay{
+  padding: 5px;
+}
 .checkBtn{
-  border: none;
+  border: 1px solid green;
   background-color: white;
-  color : green;
+  border-radius: 50%;
+  padding: 10px 16px;
   
 }
 .grow{
@@ -23,14 +48,7 @@
 
 }
 
-.bottom{
-  position: bottom;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 .grey-bg{
   background-color: #eee;
   width: 100vw;
@@ -46,6 +64,7 @@
   margin: auto;
   margin-top: 70px;
   border-radius: 10px;
+  position: relative;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -80,4 +99,7 @@
 
 .delBtn:hover{
   background-color: black;
+}
+.checkBtn:hover{
+  background-color: green;
 }
