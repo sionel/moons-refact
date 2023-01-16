@@ -21,6 +21,12 @@ function AddBtn(props){
           items = Array.from(items);
           localStorage.setItem("todolist", JSON.stringify(items), []);
           props.setData(items);
+
+          let copytoggle = [...props.toggle];
+          copytoggle.push('');
+          props.setToggle(copytoggle);
+          console.log(props.toggle);
+
         }}
       >
         +

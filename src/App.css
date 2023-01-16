@@ -12,6 +12,12 @@ body{
 html{
 	line-height: 1.15;
 }
+
+.doit{
+  color: grey;
+  text-decoration: line-through;
+}
+
 .addInput{
   height: 23px;
   margin: 3px;

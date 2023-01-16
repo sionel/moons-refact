@@ -3,12 +3,15 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Today from './Today.js'
 import AddBtn from './AddBtn.js';
+import List from './List';
 function App() {
 
   let [finish, setFinish] = useState(0);
   let [todo, setTodo] = useState(0);
   let [addlist, setAddlist] = useState('');
-  let [toggle, setToggle] = useState(false); //버튼누르면 토글
+  let [toggle, setToggle] = useState([]); //버튼누르면 토글
+  let [doit, setDoit] = useState([]);
+
   //let [total, setTotal] = useState(0);
   //let [complete,setComplete] = useState(0);
 
@@ -36,7 +39,7 @@ function App() {
            * 
            */}
           <div>
-            <AddBtn addlist={addlist} setAddlist={setAddlist} setData={setData}></AddBtn>
+            <AddBtn addlist={addlist} setAddlist={setAddlist} setData={setData} setToggle={setToggle} toggle={toggle}></AddBtn>
           </div>
           
           <div>
@@ -44,7 +47,7 @@ function App() {
             data.map(function(a, i){
               return(
                 
-                <List data={data} setData={setData} i={i} key={i} setToggle={setToggle} toggle={toggle}></List>
+                <List data={data} setData={setData} i={i} key={i} doit={doit} setDoit={setDoit} setToggle={setToggle} toggle={toggle}></List>
               )
             })}
           </div>
@@ -60,28 +63,5 @@ function App() {
 
 //체크버튼 클릭하면 해당리스트 텍스트에 줄이 그어지고 (transform사용)체크버튼의 배경색이 고정 ,한번더 누르면 그어진 줄이 지워지고 버튼 배경색 사라짐
 
-function List(props){
-  return(
-    <div className='listDisplay' style={{display : 'flex'}}>
-      <button className='checkBtn' onClick={()=>{
-        props.setToggle(!props.toggle);
-      }}>✔️</button>
-      
-      <p className='grow'>{props.data[props.i]}</p>
-      
-      <button className='delBtn' onClick={()=>{
-        let items = localStorage.getItem("todolist");
-        items = JSON.parse(items);
-        //local에 있는 데이터가 삭제버튼누른 데이터와 일치하면 false를 주고 다르면 true를 주기 때문에 일치하는 것은 삭제됨
-        let changeitems= items.filter( items => items !== props.data[props.i])
-        //items = new Set(items);
-        //items = Array.from(items);
-        localStorage.setItem("todolist", JSON.stringify(changeitems), []);
-        props.setData(changeitems);
-      }}>x</button>
-    </div>
-  )
-  
-}
 
 export default App;
