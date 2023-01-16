@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <div className="grey-bg">
         <div className="white-bg">
-          <Today></Today>
+          <Today toggle={toggle}></Today>
 
           <hr></hr>
           {/** 배열 state만들고 state값은 0, 해당 투두리스트에 체크버튼 클릭하면 해당 인덱스의 배열state를 1로 한번더 누르면 다시 0으로
