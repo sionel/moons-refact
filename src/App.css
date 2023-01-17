@@ -13,6 +13,11 @@ html{
 	line-height: 1.15;
 }
 
+.final{
+  background-color: #38d9a9;
+  color:black;
+}
+
 .doit{
   color: grey;
   text-decoration: line-through;
@@ -34,11 +39,12 @@ html{
   padding: 5px;
 }
 .checkBtn{
-  border: 1px solid green;
-  background-color: white;
+  border: 2px solid black;
   border-radius: 50%;
-  padding: 10px 16px;
-  
+  padding: 8px 14px;
+  transition: all 0.2s;
+  font-size: large;
+  color: white;
 }
 .grow{
   flex-grow: 3;
@@ -103,9 +109,12 @@ html{
   }
 }
 
+.add:hover{
+  background-color: lightgrey;
+}
 .delBtn:hover{
   background-color: black;
 }
 .checkBtn:hover{
-  background-color: green;
+  background-color: #38d9a9;
 }

@@ -20,16 +20,17 @@ function AddBtn(props){
           items = new Set(items);
           items = Array.from(items);
           localStorage.setItem("todolist", JSON.stringify(items), []);
-          props.setData(items);
+          props.setData(items); //투두리스트 데이터 저장
 
           let copytoggle = [...props.toggle];
           copytoggle.push('');
           props.setToggle(copytoggle);
-          console.log(props.toggle);
-
+          let copycom = [...props.com];
+          copycom.push('');
+          props.setCom(copycom); //toggle과 com에 배열 추가
         }}
       >
-        +
+        ADD
       </button>
     </div>
   );
